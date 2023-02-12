@@ -1,5 +1,7 @@
-" Don't try to be vi compatible
 set nocompatible
+
+" Use system clipboard 
+set clipboard=unnamedplus
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
@@ -12,8 +14,8 @@ syntax on
 " For plugins to load correctly
 filetype plugin indent on
 
-" TODO: Pick a leader key
-" let mapleader = ","
+" Leader key
+let mapleader = ","
 
 " Security
 set modelines=0
@@ -23,6 +25,8 @@ set number
 
 " Show file stats
 set ruler
+set colorcolumn=80
+" let &colorcolumn="80,".join(range(120,999),",")
 
 " Blink cursor on error instead of beeping (grr)
 set visualbell
@@ -91,10 +95,16 @@ set listchars=tab:▸\ ,eol:¬
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
-set t_Co=256
+" set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:gruvbox_italic=1
+" set termguicolors
 
 " Color scheme
-colorscheme sublimemonokai
+" colorscheme solarized
+colorscheme gruvbox
+
+" Clang autocompletion
+let g:clang_library_path='/usr/lib/llvm-10/lib/libclang.so.1'
